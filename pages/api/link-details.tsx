@@ -2,10 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { LinkDetails } from '../../classes/linkDetails/LinkDetails';
 import { RequestError } from '../../classes/error/Error';
 
-export default async function LinkDetailsHandler(
-    req: NextApiRequest,
-    res: NextApiResponse<string>
-) {
+export default async function LinkDetailsHandler(req: NextApiRequest, res: NextApiResponse) {
     try {
         allowOnlyGetRequests(req.method);
         validateUrl(req.query.url);
@@ -27,10 +24,10 @@ function validateUrl(url: string | string[]) {
     }
 }
 
-async function sendLinkDetails(url: string, res: NextApiResponse<string>) {
+async function sendLinkDetails(url: string, res: NextApiResponse<LinkDetails>) {
     const linkDetails = new LinkDetails(url);
     await linkDetails.produce();
-    res.status(200).json(JSON.stringify(linkDetails));
+    res.status(200).send(linkDetails);
 }
 
 function handleError(error: any, res: NextApiResponse<string>) {

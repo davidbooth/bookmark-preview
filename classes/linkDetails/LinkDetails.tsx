@@ -17,7 +17,7 @@ export class LinkDetails {
     }
 
     async produce() {
-        const { html, screenshot } = await this.scraper.getHtmlAndScreenshot();
+        const { html, screenshot } = await this.scraper.getHTMLAndScreenshot();
         const parser = new Parser(html);
 
         this.title = parser.getTitle();

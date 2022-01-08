@@ -21,7 +21,7 @@ export interface HtmlAndScreenshotResponse {
 export interface Scraper {
     getHTML(): Promise<string>;
     getScreenshot(): Promise<ScreenshotResponse>;
-    getHtmlAndScreenshot(): Promise<HtmlAndScreenshotResponse>;
+    getHTMLAndScreenshot(): Promise<HtmlAndScreenshotResponse>;
 }
 
 export class ScraperBase {
@@ -31,10 +31,10 @@ export class ScraperBase {
         try {
             url = new URL(givenUrl);
         } catch (error) {
-            throw new RequestError('Url has invalid protocol.', 400);
+            throw new RequestError('Url is invalid.', 400);
         }
 
-        if (url.protocol !== 'http' && url.protocol !== 'https') {
+        if (url.protocol !== 'http:' && url.protocol !== 'https:') {
             throw new RequestError('Url Protocol needs to be http or https.', 400);
         }
     }

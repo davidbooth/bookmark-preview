@@ -16,7 +16,7 @@ export class WSAScraper extends ScraperBase implements Scraper {
         this.validateUrl(this.config.url);
     }
 
-    async getHtmlAndScreenshot(): Promise<HtmlAndScreenshotResponse> {
+    async getHTMLAndScreenshot(): Promise<HtmlAndScreenshotResponse> {
         const [html, screenshot] = await Promise.all([this.getHTML(), this.getScreenshot()]);
 
         return {

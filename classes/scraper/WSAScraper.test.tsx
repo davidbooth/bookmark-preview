@@ -15,13 +15,13 @@ describe('WSAScraper', () => {
             render_js: 0,
             screenshot: 0,
             timeout: undefined,
-            url: 'SITE-URL',
+            url: 'https://google.com',
             wait_for: undefined,
             wait_until: undefined,
         };
 
-        const scraper = new WSAScraper('API-KEY');
-        const html = await scraper.getHTML({ url: 'SITE-URL' });
+        const scraper = new WSAScraper({ url: 'https://google.com' });
+        const html = await scraper.getHTML();
 
         expect(mockedAxios.get).toHaveBeenCalledWith(API_URL, { params: expectedApiParams });
         expect(html).toEqual(mockResponse.data);
@@ -36,13 +36,13 @@ describe('WSAScraper', () => {
             render_js: 1,
             screenshot: 1,
             timeout: undefined,
-            url: 'SITE-URL',
+            url: 'https://google.com',
             wait_for: undefined,
             wait_until: undefined,
         };
 
-        const scraper = new WSAScraper('API-KEY');
-        const response = await scraper.getScreenshot({ url: 'SITE-URL' });
+        const scraper = new WSAScraper({ url: 'https://google.com' });
+        const response = await scraper.getScreenshot();
 
         expect(mockedAxios.get).toHaveBeenCalledWith(API_URL, { params: expectedApiParams });
         expect(response).toEqual(mockResponse.data);
