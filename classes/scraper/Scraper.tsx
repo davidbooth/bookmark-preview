@@ -1,4 +1,5 @@
 import { RequestError } from '../error/Error';
+import { Link } from '../link/Link';
 
 export interface ScrapeRequestConfig {
     url: string;
@@ -26,16 +27,6 @@ export interface Scraper {
 
 export class ScraperBase {
     validateUrl(givenUrl: string) {
-        let url;
-
-        try {
-            url = new URL(givenUrl);
-        } catch (error) {
-            throw new RequestError('Url is invalid.', 400);
-        }
-
-        if (url.protocol !== 'http:' && url.protocol !== 'https:') {
-            throw new RequestError('Url Protocol needs to be http or https.', 400);
-        }
+        return Link.validate(givenUrl);
     }
 }

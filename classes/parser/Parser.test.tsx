@@ -66,4 +66,22 @@ describe('Parser', () => {
         const parser = new Parser(DEMO_HTML_EMPTY);
         expect(parser.getKeywords()).toEqual(undefined);
     });
+
+    test('should return og:Image url', () => {
+        const parser = new Parser(DEMO_HTML_LOWERCASE_1);
+        expect(parser.getPreviewPhoto()).toEqual('https://www.google.com/og-image.png');
+    });
+    test('should return twitter:Image url', () => {
+        const parser = new Parser(DEMO_HTML_UPPERCASE_1);
+        expect(parser.getPreviewPhoto()).toEqual('https://www.google.com/twitter-image.png');
+    });
+
+    test('should return og:Image url', () => {
+        const parser = new Parser(DEMO_HTML_LOWERCASE_1);
+        expect(parser.getMetaImage('open-graph')).toEqual('https://www.google.com/og-image.png');
+    });
+    test('should return twitter:Image url', () => {
+        const parser = new Parser(DEMO_HTML_LOWERCASE_1);
+        expect(parser.getMetaImage('twitter')).toEqual('https://www.google.com/twitter-image.png');
+    });
 });

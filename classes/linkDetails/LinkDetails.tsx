@@ -6,6 +6,7 @@ export class LinkDetails {
     title: string | undefined;
     description: string | undefined;
     keywords: string[] | undefined;
+    previewPhoto: string | undefined;
     screenshot: string | undefined;
 
     private url: string;
@@ -16,14 +17,19 @@ export class LinkDetails {
         this.scraper = new WSAScraper({ url });
     }
 
-    async produce() {
-        const { html, screenshot } = await this.scraper.getHTMLAndScreenshot();
+    async produce(includeScreenshot = false) {
+        if (includeScreenshot) {
+            const screenshot = await this.scraper.getScreenshot();
+            this.screenshot = screenshot.base64;
+        }
+
+        const html = await this.scraper.getHTML();
         const parser = new Parser(html);
 
         this.title = parser.getTitle();
         this.description = parser.getDescription();
         this.keywords = parser.getKeywords();
-        this.screenshot = screenshot.base64;
+        this.previewPhoto = parser.getPreviewPhoto();
     }
 
     toJSON() {
@@ -32,6 +38,7 @@ export class LinkDetails {
             description: this.description,
             keywords: this.keywords,
             screenshot: this.screenshot,
+            previewPhoto: this.previewPhoto,
             url: this.url,
         };
     }

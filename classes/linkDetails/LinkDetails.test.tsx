@@ -4,12 +4,14 @@
 import { LinkDetails } from './LinkDetails';
 import { DEMO_HTML_LOWERCASE_1 } from '../../mocks/demoHtml';
 
-const mockGetHTMLAndScreenshot = jest.fn();
+const mockGetScreenshot = jest.fn();
+const mockGetHTML = jest.fn();
 jest.mock('../scraper/WSAScraper', () => {
     return {
         WSAScraper: jest.fn().mockImplementation(() => {
             return {
-                getHTMLAndScreenshot: mockGetHTMLAndScreenshot,
+                getScreenshot: mockGetScreenshot,
+                getHTML: mockGetHTML,
             };
         }),
     };
@@ -17,21 +19,24 @@ jest.mock('../scraper/WSAScraper', () => {
 
 describe('LinkDetails', () => {
     test('should produce title, description, keywords and screenshot', async () => {
-        mockGetHTMLAndScreenshot.mockResolvedValue({
-            html: DEMO_HTML_LOWERCASE_1,
-            screenshot: { base64: 'screenshot-content' },
+        mockGetScreenshot.mockResolvedValue({
+            base64: 'screenshot-content',
         });
 
-        const details = new LinkDetails('https://google.com');
-        await details.produce();
+        mockGetHTML.mockResolvedValue(DEMO_HTML_LOWERCASE_1);
 
-        expect(mockGetHTMLAndScreenshot).toHaveBeenCalledTimes(1);
+        const details = new LinkDetails('https://google.com');
+        await details.produce(true);
+
+        expect(mockGetScreenshot).toHaveBeenCalledTimes(1);
+        expect(mockGetHTML).toHaveBeenCalledTimes(1);
 
         expect(details.toJSON()).toEqual({
             title: 'Title',
             description: 'Description',
             keywords: ['Keyword1', 'Keyword2'],
             screenshot: 'screenshot-content',
+            previewPhoto: 'https://www.google.com/og-image.png',
             url: 'https://google.com',
         });
     });
@@ -45,9 +50,10 @@ describe('LinkDetails', () => {
             description: undefined,
             keywords: undefined,
             screenshot: undefined,
+            previewPhoto: undefined,
             url: 'https://google.com',
         });
 
-        expect(Object.keys(json).length).toEqual(5);
+        expect(Object.keys(json).length).toEqual(6);
     });
 });

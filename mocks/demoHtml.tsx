@@ -10,7 +10,9 @@ export const DEMO_HTML_LOWERCASE_1 = `
         <title>Title</title>
         <meta name="description" content="Description">
         <meta name="keywords" content="Keyword1, Keyword2">
-    </head>
+        <meta property="og:image" content="https://www.google.com/og-image.png">
+        <meta name="twitter:image" content="https://www.google.com/twitter-image.png">
+        </head>
 </html>
 `;
 
@@ -30,6 +32,7 @@ export const DEMO_HTML_UPPERCASE_1 = `
         <Title>Title</Title>
         <Meta name="Description" content="Description">
         <Meta name="Keywords" content="Keyword1, Keyword2">
+        <Meta name="Twitter:image" content="https://www.google.com/twitter-image.png">
     </head>
 </html>
 `;
