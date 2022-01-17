@@ -1,9 +1,15 @@
 import { FC } from 'react';
 
-export const Button: FC = (props) => {
+interface ButtonProps {
+    onClick?: () => void;
+    type: 'button' | 'submit';
+}
+
+export const Button: FC<ButtonProps> = (props) => {
     return (
         <button
-            type="button"
+            onClick={props.onClick}
+            type={props.type}
             className={`
                 rounded-lg px-5 py-2.5
                 text-white font-medium text-sm text-center

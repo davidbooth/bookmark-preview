@@ -1,14 +1,14 @@
 import { FC } from 'react';
+import { BookmarkLink } from './bookmark-link';
 import { BookmarkImage } from './bookmark-image';
 import { BookmarkKeywords } from './bookmark-keywords';
-import { TrashIcon } from '@heroicons/react/solid';
-import { BookmarkLink } from './bookmark-link';
 
 export interface Bookmark {
+    id: string;
+    url: string;
     title: string | undefined;
     description: string | undefined;
     keywords: string[] | undefined;
-    url: string;
     previewPhoto: string | undefined;
     screenshot: string | undefined;
 }
@@ -21,10 +21,10 @@ export const Bookmark: FC<BookmarkProps> = (props) => {
     return (
         <div
             className={`
-                    max-w-sm bg-gray-800 
-                    rounded-lg border border-gray-700
-                    shadow-md 
-                `}>
+                w-96 h-[28rem] hide-scrollbar overflow-y-auto
+                bg-gray-800 border-gray-700
+                rounded-lg border shadow-md
+            `}>
             <BookmarkLink url={props.bookmark.url}>
                 <BookmarkImage
                     previewPhoto={props.bookmark.previewPhoto}
@@ -39,7 +39,7 @@ export const Bookmark: FC<BookmarkProps> = (props) => {
                     </h5>
                     <p className="mb-3 font-normal text-gray-400">{props.bookmark.description}</p>
                 </BookmarkLink>
-                <BookmarkKeywords keywords={props.bookmark.keywords} />
+                <BookmarkKeywords id={props.bookmark.id} keywords={props.bookmark.keywords} />
             </div>
         </div>
     );

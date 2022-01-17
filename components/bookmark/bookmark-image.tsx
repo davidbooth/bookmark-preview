@@ -12,6 +12,10 @@ export const BookmarkImage: FC<BookmarkImageProps> = (props) => {
     }
 
     return (
-        <img className="rounded-t-lg" src={props.previewPhoto} alt={`Preview of ${props.title}`} />
+        <img
+            className="rounded-t-lg max-h-[200px] sm:h-[200px] w-full object-cover object-center"
+            src={props.previewPhoto}
+            alt={`Preview of ${props.title}`}
+        />
     );
 };

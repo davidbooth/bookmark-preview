@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-
 import { Container } from '../components/layout/container';
 import { Nav } from '../components/nav/nav';
 import { Hero } from '../components/hero/hero';
