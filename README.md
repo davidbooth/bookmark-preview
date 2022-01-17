@@ -12,48 +12,23 @@
   <p align="center">
     Bookmarks saved in localStorage.
     <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
     <a href="https://github.com/davidbooth/pelican/issues">Report Bug</a>
     ·
     <a href="https://github.com/davidbooth/pelican/issues">Request Feature</a>
+    <br />
+    <br />
+        <a href="https://pelican-bookmarks.vercel.app/"><b><h3>View Demo</h3></b></a>
   </p>
 </div>
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
 
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Pelican Screen Shot][product-screenshot]](https://pelican-bookmarks.vercel.app)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
+A bookmark manager that saves bookmarks in your browser's localstorage.
+The project uses [WebScrapingApi.com](https://www.webscrapingapi.com/) to gather bookmark info.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -61,12 +36,10 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 -   [Next.js](https://nextjs.org/)
 -   [React.js](https://reactjs.org/)
--   [Vue.js](https://vuejs.org/)
--   [Angular](https://angular.io/)
--   [Svelte](https://svelte.dev/)
--   [Laravel](https://laravel.com)
--   [Bootstrap](https://getbootstrap.com)
--   [JQuery](https://jquery.com)
+-   [Tailwindcss](https://tailwindcss.com/)
+-   [Redux Toolkit](https://redux-toolkit.js.org/)
+-   [Jest.io](https://jestjs.io/)
+-   [Typescript](https://www.typescriptlang.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -74,12 +47,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
 
 -   npm
     ```sh
@@ -88,18 +56,18 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+1. Get a free API Key at [https://www.webscrapingapi.com/](https://www.webscrapingapi.com/)
 2. Clone the repo
     ```sh
-    git clone https://github.com/github_username/repo_name.git
+    git clone https://github.com/davidbooth/pelican.git
     ```
 3. Install NPM packages
     ```sh
     npm install
     ```
-4. Enter your API in `config.js`
-    ```js
-    const API_KEY = 'ENTER YOUR API';
+4. Enter your API Key in `.env.development.local` for development or just set the `WSA_API_KEY` env variable.
+    ```sh
+    WSA_API_KEY=YOUR-API-KEY;
     ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -108,9 +76,10 @@ This is an example of how to list things you need to use the software and how to
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Simply open the [Pelican](https://pelican-bookmarks.vercel.app/) and add your favorite links, revisit [Pelican](https://pelican-bookmarks.vercel.app/) on the same device and your bookmarks will appear.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+<img src="public/promo/desktop.png" alt="drawing" width="500" alt="Pelican Desktop Screen Shot"/>
+<img src="public/promo/mobile.png" alt="drawing" height="400" alt="Pelican Desktop Screen Shot"/>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -118,10 +87,14 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
--   [] Feature 1
--   [] Feature 2
--   [] Feature 3
-    -   [] Nested Feature
+-   [x] Add Readme
+-   [ ] Add Tests
+    -   [x] Unit Tests for Backend
+    -   [ ] Unit Tests for Frontend
+    -   [ ] Integration Tests
+    -   [ ] E2E Tests
+-   [ ] Fix Safari Gap Issue
+-   [ ] Improve Invalid Link Behavior
 
 See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
 
@@ -148,7 +121,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -156,9 +129,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+David Booth - [@programDave](https://twitter.com/programDave)
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
+Project Link: [https://pelican-bookmarks.vercel.app/](https://pelican-bookmarks.vercel.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -166,25 +139,11 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 
 ## Acknowledgments
 
--   []()
--   []()
--   []()
+-   [Flaticon.com](https://www.flaticon.com/)
+-   [WebScrapingApi.com](https://www.webscrapingapi.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: public/promo/preview.gif
