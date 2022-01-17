@@ -24,7 +24,7 @@
 
 ## About The Project
 
-<a align="center" href="https://pelican-bookmarks.vercel.app" target="_blank">
+<a href="https://pelican-bookmarks.vercel.app" target="_blank">
     <img src="public/promo/preview.gif" alt="drawing" alt="Pelican Preview"/>
 </a>
 
