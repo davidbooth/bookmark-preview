@@ -25,7 +25,7 @@
 ## About The Project
 
 <a align="center" href="https://pelican-bookmarks.vercel.app" target="_blank">
-    <img src="public/promo/preview.gif" alt="drawing" width="500" height="400" alt="Pelican Preview"/>
+    <img src="public/promo/preview.gif" alt="drawing" alt="Pelican Preview"/>
 </a>
 
 A bookmark manager that saves bookmarks in your browser's localstorage.
