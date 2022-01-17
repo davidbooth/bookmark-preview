@@ -16,8 +16,7 @@
     ·
     <a href="https://github.com/davidbooth/pelican/issues">Request Feature</a>
     <br />
-    <br />
-        <a href="https://pelican-bookmarks.vercel.app/"><b><h3>View Demo</h3></b></a>
+    <a href="https://pelican-bookmarks.vercel.app/"><b><h3>View Demo</h3></b></a>
   </p>
 </div>
 
@@ -25,9 +24,12 @@
 
 ## About The Project
 
-[![Pelican Screen Shot][product-screenshot]](https://pelican-bookmarks.vercel.app)
+<a align="center" href="https://pelican-bookmarks.vercel.app" target="_blank">
+    <img src="public/promo/preview.gif" alt="drawing" width="500" height="400" alt="Pelican Preview"/>
+</a>
 
 A bookmark manager that saves bookmarks in your browser's localstorage.
+<br />
 The project uses [WebScrapingApi.com](https://www.webscrapingapi.com/) to gather bookmark info.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -76,10 +78,12 @@ The project uses [WebScrapingApi.com](https://www.webscrapingapi.com/) to gather
 
 ## Usage
 
-Simply open the [Pelican](https://pelican-bookmarks.vercel.app/) and add your favorite links, revisit [Pelican](https://pelican-bookmarks.vercel.app/) on the same device and your bookmarks will appear.
+Simply open [Pelican](https://pelican-bookmarks.vercel.app/) and add your favorite links, revisit [Pelican](https://pelican-bookmarks.vercel.app/) on the same device and your bookmarks will appear.
 
-<img src="public/promo/desktop.png" alt="drawing" width="500" alt="Pelican Desktop Screen Shot"/>
-<img src="public/promo/mobile.png" alt="drawing" height="400" alt="Pelican Desktop Screen Shot"/>
+<p align="center">
+    <img style="display: inline-block" src="public/promo/desktop.png" alt="drawing" width="500" height="400" alt="Pelican Desktop Screen Shot"/>
+    <img style="display: inline-block" src="public/promo/mobile.png" alt="drawing" height="400" alt="Pelican Desktop Screen Shot"/>
+</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -96,7 +100,7 @@ Simply open the [Pelican](https://pelican-bookmarks.vercel.app/) and add your fa
 -   [ ] Fix Safari Gap Issue
 -   [ ] Improve Invalid Link Behavior
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/davidbooth/pelican/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -141,9 +145,6 @@ Project Link: [https://pelican-bookmarks.vercel.app/](https://pelican-bookmarks.
 
 -   [Flaticon.com](https://www.flaticon.com/)
 -   [WebScrapingApi.com](https://www.webscrapingapi.com/)
+-   [Vercel.com](https://vercel.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[product-screenshot]: public/promo/preview.gif
